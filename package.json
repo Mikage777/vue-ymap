@@ -2,7 +2,7 @@
   "name": "vue-ymap",
   "description": "Wrapper for vue-yandex-maps",
   "homepage": "https://github.com/Mikage777/vue-ymap",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -20,7 +20,7 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14",
-    "vue-yandex-maps": "^0.11.7"
+    "vue-yandex-maps": "0.11.6"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
