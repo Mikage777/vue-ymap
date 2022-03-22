@@ -10,9 +10,9 @@
             :key="index"
             :markerId="index"
             :icon="{
-            layout: 'default#image',
-            imageHref: markerIcon,
-          }"
+              layout: 'default#image',
+              imageHref: markerIcon,
+            }"
             v-bind="marker"
             @click="handleClickMarker"
         />
