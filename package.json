@@ -2,7 +2,7 @@
   "name": "vue-ymap",
   "description": "Wrapper for vue-yandex-maps",
   "homepage": "https://github.com/Mikage777/vue-ymap",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "license": "MIT",
   "private": false,
   "scripts": {
@@ -25,14 +25,13 @@
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
     "@rollup/plugin-commonjs": "^21.0.2",
-    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-image": "^2.1.1",
     "@vue/cli-plugin-babel": "^5.0.3",
     "node-sass": "^7.0.1",
     "postcss": "^8.4.12",
     "rollup": "^2.70.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-svg": "^2.0.0",
     "rollup-plugin-uglify": "^6.0.4",
     "rollup-plugin-vue2": "^0.8.1"
   },

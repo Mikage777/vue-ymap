@@ -2,10 +2,9 @@ import commonjs from '@rollup/plugin-commonjs';
 import vue from 'rollup-plugin-vue2';
 import postcss from 'rollup-plugin-postcss'
 import babel from "rollup-plugin-babel";
-import svg from 'rollup-plugin-svg'
 import uglify from 'rollup-plugin-uglify';
 import buble from '@rollup/plugin-buble';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
+import image from '@rollup/plugin-image';
 
 export default {
 	input: 'src/index.js',
@@ -27,9 +26,8 @@ export default {
 		babel({ runtimeHelpers: true }),
 		commonjs(),
 		postcss(),
-		svg(),
+		image(),
 		buble(),
-		nodeResolve(),
 		uglify.uglify()
 	],
 };
