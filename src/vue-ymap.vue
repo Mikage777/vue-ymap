@@ -6,14 +6,16 @@
     >
       <div v-if="!!markers.length">
         <ymap-marker
-            v-for="(marker, index) in markers"
-            :key="index"
-            :markerId="index"
-            :icon="{
-              layout: 'default#image',
-              imageHref: markerIcon,
+            v-for="marker in markers"
+            :key="marker.id"
+            :markerId="marker.id"
+            v-bind="{
+              icon: {
+                layout: 'default#image',
+                imageHref: markerIcon,
+              },
+              ...marker
             }"
-            v-bind="marker"
             @click="handleClickMarker"
         />
       </div>
@@ -54,6 +56,7 @@ export default {
       }),
     }
   },
+
   methods: {
     handleClickMarker(e) {
       this.$emit('onclick-marker', e)
