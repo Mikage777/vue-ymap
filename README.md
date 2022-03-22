@@ -1,5 +1,7 @@
 # vue-ymap
 
+Wrapper for vue-yandex-maps
+
 ### Setup
 ```
 npm install vue-ymap
