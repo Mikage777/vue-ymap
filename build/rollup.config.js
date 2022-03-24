@@ -1,7 +1,7 @@
 import commonjs from '@rollup/plugin-commonjs';
 import vue from 'rollup-plugin-vue2';
 import postcss from 'rollup-plugin-postcss'
-import babel from "rollup-plugin-babel";
+import { babel } from '@rollup/plugin-babel';
 import uglify from 'rollup-plugin-uglify';
 import buble from '@rollup/plugin-buble';
 import image from '@rollup/plugin-image';
@@ -23,7 +23,7 @@ export default {
 			compileTemplate: true,
 			preprocessStyles: true
 		}),
-		babel({ runtimeHelpers: true }),
+		babel({ babelHelpers: 'bundled' }),
 		commonjs(),
 		postcss(),
 		image(),
