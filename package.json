@@ -2,7 +2,7 @@
   "name": "vue-ymap",
   "description": "Wrapper for vue-yandex-maps",
   "homepage": "https://github.com/Mikage777/vue-ymap",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "keywords": "vue yandex-maps",
   "license": "MIT",
   "private": false,

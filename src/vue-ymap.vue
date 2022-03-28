@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="showMap">
     <yandex-map
         ymap-class="yandex-map"
         v-bind="config"
@@ -34,7 +34,8 @@ export default {
   components: { yandexMap, ymapMarker },
   data() {
     return {
-      markerIcon
+      markerIcon,
+      showMap: false,
     }
   },
   props: {
@@ -56,7 +57,9 @@ export default {
       }),
     }
   },
-
+  mounted() {
+    this.showMap = true;
+  },
   methods: {
     handleClickMarker(e) {
       this.$emit('onclick-marker', e)
