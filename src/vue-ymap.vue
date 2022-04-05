@@ -3,7 +3,20 @@
     <yandex-map
         ymap-class="yandex-map"
         v-bind="config"
-        @map-was-initialized="handleMapInitialized"
+        @map-was-initialized="handleMapWasInitialized"
+        @actionend="handleActionEnd"
+        @balloonclose="handleBalloonClose"
+        @balloonopen="handleBalloonOpen"
+        @boundschange="handleBoundsChange"
+        @click="handleClick"
+        @contextmenu="handleContextMenu"
+        @dblclick="handleDoubleClick"
+        @destroy="handleDestroy"
+        @hintclose="handleHintClose"
+        @hintopen="handleHintOpen"
+        @optionschange="handleOptionsChange"
+        @sizechange="handleSizeChange"
+        @typechange="handleTypeChange"
     >
       <div v-if="!!markers.length">
         <ymap-marker
@@ -17,7 +30,18 @@
               },
               ...marker
             }"
+            @balloonclose="handleBalloonMarkerClose"
+            @balloonopen="handleBalloonMarkerOpen"
             @click="handleClickMarker"
+            @contextmenu="handleContextMenuMarker"
+            @dblclick="handleDoubleClickMarker"
+            @drag="handleDragMarker"
+            @dragend="handleDragMarkerEnd"
+            @dragstart="handleDragMarkerStart"
+            @hintclose="handleHintMarkerClose"
+            @hintopen="handleHintMarkerOpen"
+            @mouseenter="handleMouseEnterMarker"
+            @mouseleave="handleMouseLeaveMarker"
         />
       </div>
     </yandex-map>
@@ -62,11 +86,83 @@ export default {
     this.showMap = true;
   },
   methods: {
-    handleClickMarker(e) {
-      this.$emit('onclick-marker', e)
-    },
-    handleMapInitialized(map) {
+    handleMapWasInitialized(map) {
       this.$emit('map-was-initialized', map)
+    },
+    handleActionEnd(e) {
+      this.$emit('actionend', e)
+    },
+    handleBalloonClose(e) {
+      this.$emit('balloonclose', e)
+    },
+    handleBalloonOpen(e) {
+      this.$emit('balloonopen', e)
+    },
+    handleBoundsChange(e) {
+      this.$emit('boundschange', e)
+    },
+    handleClick(e) {
+      this.$emit('click', e)
+    },
+    handleContextMenu(e) {
+      this.$emit('contextmenu', e)
+    },
+    handleDoubleClick(e) {
+      this.$emit('dblclick', e)
+    },
+    handleDestroy(e) {
+      this.$emit('destroy', e)
+    },
+    handleHintClose(e) {
+      this.$emit('hintclose', e)
+    },
+    handleHintOpen(e) {
+      this.$emit('hintopen', e)
+    },
+    handleOptionsChange(e) {
+      this.$emit('optionschange', e)
+    },
+    handleSizeChange(e) {
+      this.$emit('sizechange', e)
+    },
+    handleTypeChange(e) {
+      this.$emit('typechange', e)
+    },
+    handleBalloonMarkerClose(e) {
+      this.$emit('marker-balloonclose', e)
+    },
+    handleBalloonMarkerOpen(e) {
+      this.$emit('marker-balloonopen', e)
+    },
+    handleClickMarker(e) {
+      this.$emit('marker-click', e)
+    },
+    handleContextMenuMarker(e) {
+      this.$emit('marker-contextmenu', e)
+    },
+    handleDoubleClickMarker(e) {
+      this.$emit('marker-dblclick', e)
+    },
+    handleDragMarker(e) {
+      this.$emit('marker-drag', e)
+    },
+    handleDragMarkerEnd(e) {
+      this.$emit('marker-dragend', e)
+    },
+    handleDragMarkerStart(e) {
+      this.$emit('marker-dragstart', e)
+    },
+    handleHintMarkerClose(e) {
+      this.$emit('marker-hintclose', e)
+    },
+    handleHintMarkerOpen(e) {
+      this.$emit('marker-hintopen', e)
+    },
+    handleMouseEnterMarker(e) {
+      this.$emit('marker-mouseenter', e)
+    },
+    handleMouseLeaveMarker(e) {
+      this.$emit('marker-mouseleave', e)
     }
   }
 };
