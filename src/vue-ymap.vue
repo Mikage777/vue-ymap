@@ -3,6 +3,7 @@
     <yandex-map
         ymap-class="yandex-map"
         v-bind="config"
+        @map-was-initialized="handleMapInitialized"
     >
       <div v-if="!!markers.length">
         <ymap-marker
@@ -64,6 +65,9 @@ export default {
     handleClickMarker(e) {
       this.$emit('onclick-marker', e)
     },
+    handleMapInitialized(map) {
+      this.$emit('map-was-initialized', map)
+    }
   }
 };
 </script>
